@@ -40,3 +40,35 @@
   min-height: 588px;
   padding-top: 100px;
 }
+
+/*карусель отзывы*/
+.voice {
+  position: relative;
+}
+.voice .item {
+  background: url('/images/slider/slider_item.png') left top no-repeat;
+  padding-top: 30px;
+}
+
+.voice .carousel-control-prev_ar {
+  position: absolute;
+  bottom: -13px;
+  right: 90px;
+}
+.voice .carousel-control-next_ar {
+  position: absolute;
+  bottom: -13px;
+  right: 0;
+}
+.voice .carousel-control-prev-icon {
+  background: url('/images/slider/array_prev.jpg') center no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 16px;
+}
+.voice .carousel-control-next-icon {
+  background: url('/images/slider/array_next.jpg') center no-repeat;
+  background-size: cover;
+  width: 72px;
+  height: 16px;
+}
