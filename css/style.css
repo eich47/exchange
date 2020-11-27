@@ -31,3 +31,12 @@
   object-fit: cover;
   height: 100%;
 }
+
+/*секция история*/
+.history {
+  background: url('/images/history/history_bg.png') center top no-repeat,
+    linear-gradient(to bottom, #ffffff 50%, #c5dde8 50%);
+  background-size: auto;
+  min-height: 588px;
+  padding-top: 100px;
+}
