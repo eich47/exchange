@@ -1,3 +1,10 @@
+body {
+  color: #4e5983;
+}
+.nav a,
+.navbar-nav a {
+  color: #4e5983 !important;
+}
 /*навигация*/
 .nav-padding-outside-left {
   padding-left: 100px;
