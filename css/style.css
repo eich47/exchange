@@ -13,8 +13,8 @@
 .calculator {
   background-color: #a17fff;
   padding-top: 116px;
-  background: url('/images/calculator_form.png') 50% 100% no-repeat,
-    url('/images/calculator_fon.png') center no-repeat;
+  background: url('/images/calculator/calculator_form.png') 50% 100% no-repeat,
+    url('/images/calculator/calculator_fon.png') center no-repeat;
   background-size: auto, cover;
   min-height: 754px;
 }
