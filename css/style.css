@@ -8,3 +8,17 @@
 .bg-registation{
     background-color: #A17FFF;
 }
+
+/*секция калькулятор*/
+.calculator{
+    background-color: #A17FFF;
+    padding-top: 116px;
+    background: url("/images/calculator_form.png") 50% 100% no-repeat,
+    url("/images/calculator_fon.png") center no-repeat;
+    background-size: auto, cover;
+    min-height: 754px;
+
+}
+.calculator .ts-header{
+    font-size: 3.5rem;
+}
