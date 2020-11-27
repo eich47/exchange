@@ -21,3 +21,13 @@
 .calculator .ts-header {
   font-size: 3.5rem;
 }
+
+/*секция бонус*/
+.bonus .image {
+  height: 170px;
+}
+
+.bonus .image img {
+  object-fit: cover;
+  height: 100%;
+}
