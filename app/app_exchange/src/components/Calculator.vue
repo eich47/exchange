@@ -18,6 +18,9 @@
             <div class="col-auto border-bottom pb-3 pl-0">
               <CalculatorSelect/>
             </div>
+            <div class="col-auto pb-4">
+              <CalculatorSwap/>
+            </div>
 
           </div>
         </b-form>
@@ -29,9 +32,10 @@
 <script>
 import CalculatorPart from './CalculatorPart'
 import CalculatorSelect from "./CalculatorSelect";
+import CalculatorSwap from "./CalculatorSwap";
 export default {
   name: 'Calculator',
-  components: {CalculatorSelect, CalculatorPart},
+  components: {CalculatorSwap, CalculatorSelect, CalculatorPart},
   computed: {
     options(){
       return [
