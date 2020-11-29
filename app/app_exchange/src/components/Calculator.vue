@@ -12,7 +12,7 @@
                 :amount="count"
                 :options="options"
                 labelCurrency=""
-                title-commission="131231212"
+                title-commission=""
               />
             </div>
             <div class="col-auto border-bottom pb-3 pl-0">
@@ -20,6 +20,20 @@
             </div>
             <div class="col-auto pb-4">
               <CalculatorSwap/>
+            </div>
+            <div class="col-auto border-bottom pr-0">
+              <CalculatorPart
+                id="8768678"
+                label="Сумма"
+                title="Вы получаете"
+                :amount="countIn"
+                :options="options"
+                labelCurrency=""
+                :title-commission="'с учетом комиссии ПС (0.5%)'"
+              />
+            </div>
+            <div class="col-auto border-bottom pb-3 pl-0">
+              <CalculatorSelect/>
             </div>
 
           </div>
@@ -46,6 +60,9 @@ export default {
     },
     count(){
       return 123.12
+    },
+    countIn(){
+      return 444.33
     },
   },
 }
