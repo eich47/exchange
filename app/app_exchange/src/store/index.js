@@ -50,6 +50,9 @@ export default new Vuex.Store({
   },
   actions: {
     exchange(context){
+      //скроем ошибки
+      context.commit('setIsUserInputError', false)
+      
       if(context.state.selectedInCurrency === context.state.selectedOutCurrency ){
         console.log(`валюты для обмена совпадают`)
         context.commit('setIsUserInputError', true)
@@ -72,6 +75,11 @@ export default new Vuex.Store({
         })
         .finally(() => {
           context.commit('setIsProcessing', false)
+          //скроем информационные сообщения
+          setTimeout(()=>{
+            context.commit('setExchangeSuccess', null)
+            context.commit('setExchangeFailure', null)
+          },2000)
         })
     },
   },
