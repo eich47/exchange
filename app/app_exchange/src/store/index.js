@@ -19,14 +19,14 @@ export default new Vuex.Store({
     
   },
   mutations: {
-    setAmountIn(state){
-      this.amountIn = state
+    setAmountIn(state, payload){
+      state.amountIn = payload
     },
-    setAmountOut(state){
-      this.amountOut = state
+    setAmountOut(state, payload){
+      state.amountOut = payload
     },
-    setIsProcessing(state){
-      this.isProcessing = state
+    setIsProcessing(state, payload){
+      state.isProcessing = payload
     },
     setSelectedInCurrency(state, payload){
       state.selectedInCurrency = payload
