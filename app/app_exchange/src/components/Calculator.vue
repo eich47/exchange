@@ -113,6 +113,12 @@ export default {
           success: false,
         }
       }
+      if(this.$store.state.isUserInputError){
+        return {
+          text: `введите сумму и выберите валюту для обмена`,
+          success: false,
+        }
+      }
       return ``
     },
   },

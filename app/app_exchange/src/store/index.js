@@ -19,6 +19,7 @@ export default new Vuex.Store({
     selectedOutCurrency: Currency.BTC, //какую валюту хочет получить пользователь
     isExchangeSuccess: null, //обмен произведен успешно
     isExchangeFailure: null, //обмен не был произведен
+    isUserInputError: null, //пользователь ввел неверные данные или не выбрал валюту для обмена
     
   },
   mutations: {
@@ -43,15 +44,20 @@ export default new Vuex.Store({
     setExchangeFailure(state, payload){
       state.isExchangeFailure = payload
     },
+    setIsUserInputError(state, payload){
+      state.isUserInputError = payload
+    },
   },
   actions: {
     exchange(context){
       if(context.state.selectedInCurrency === context.state.selectedOutCurrency ){
         console.log(`валюты для обмена совпадают`)
+        context.commit('setIsUserInputError', true)
         return
       }
       if(context.state.amountIn <= 0){
         console.log(`сумма для обмена меньше либо равна нулю`)
+        context.commit('setIsUserInputError', true)
         return
       }
       context.commit('setIsProcessing', true)
