@@ -19,8 +19,10 @@
         type="text"
         :trim="true"
         class="border-0"
+        :class="{'bg-white': disabled}"
         @input="$emit('input', $event)"
         :formatter="formatter"
+        :disabled="disabled"
 
       ></b-form-input>
     </b-form-group>
@@ -59,6 +61,10 @@ export default {
     options: {
       type: Array,
       required: true,
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
     },
   },
   data() {

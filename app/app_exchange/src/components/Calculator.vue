@@ -43,6 +43,7 @@
                 :options="options"
                 labelCurrency=""
                 :title-commission="'с учетом комиссии ПС (0.5%)'"
+                :disabled="true"
               />
             </div>
             <div class="col-auto border-bottom pb-3 pl-0">
