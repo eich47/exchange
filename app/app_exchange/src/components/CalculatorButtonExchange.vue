@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="btn"
+    <button class="btn el-color py-3 px-4"
             type="submit"
             disabled="isDisabled"
     >Обменять</button>
@@ -20,9 +20,10 @@
 </script>
 
 <style scoped>
- .bg-color{
+ .el-color{
      background: linear-gradient(140.59deg, #562EC2 29.59%, #A07EFE 73.59%);
      opacity: 0.8;
      border-radius: 9px;
+     color: #ffffff;
  }
 </style>
