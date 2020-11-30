@@ -2,6 +2,9 @@
   <b-container fluid="true">
     <b-row>
       <b-col>
+        <span class="d-block"
+              :class="{'text-success': infoMessage.success, 'text-danger': !infoMessage.success}"
+        >{{infoMessage.text}}</span>
         <b-form @submit.prevent="onSubmit">
           <div class="row align-items-end">
             <!--            блок отдает-->
@@ -90,6 +93,27 @@ export default {
     },
     selectedOut(){
       return this.$store.state.selectedOutCurrency
+    },
+    infoMessage(){
+      if(this.$store.state.isProcessing){
+        return {
+         text: `обработка обмена...`,
+         success: true,
+        }
+      }
+      if(this.$store.state.isExchangeSuccess){
+        return {
+          text:`обмен совершен успешно`,
+          success: true,
+        }
+      }
+      if(this.$store.state.isExchangeFailure){
+        return {
+          text: `произошла ошибка при попытке обмена`,
+          success: false,
+        }
+      }
+      return ``
     },
   },
   methods:{
