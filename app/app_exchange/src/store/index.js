@@ -46,6 +46,14 @@ export default new Vuex.Store({
   },
   actions: {
     exchange(context){
+      if(context.state.selectedInCurrency === context.state.selectedOutCurrency ){
+        console.log(`валюты для обмена совпадают`)
+        return
+      }
+      if(context.state.amountIn <= 0){
+        console.log(`сумма для обмена меньше либо равна нулю`)
+        return
+      }
       context.commit('setIsProcessing', true)
       const result = new Exchange(context.state).run()
       result.then(amountOut => {

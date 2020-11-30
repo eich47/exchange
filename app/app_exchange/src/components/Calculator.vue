@@ -2,7 +2,7 @@
   <b-container fluid="true">
     <b-row>
       <b-col>
-        <b-form>
+        <b-form @submit.prevent="onSubmit">
           <div class="row align-items-end">
             <!--            блок отдает-->
             <div class="col-auto border-bottom pr-0">
@@ -105,6 +105,9 @@ export default {
       const checkNumber = Number(withoutSymbol)
       const res = isNaN(checkNumber) ? 0 : checkNumber
       this.$store.commit('setAmountIn', res)
+    },
+    onSubmit(){
+      this.$store.dispatch('exchange')
     },
   },
 }
