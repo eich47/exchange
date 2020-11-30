@@ -15,6 +15,7 @@
                 labelCurrency=""
                 title-commission=""
                 :selected="selectedIn"
+                @input="onInputIn"
               />
             </div>
             <div class="col-auto border-bottom pb-3 pl-0">
@@ -97,6 +98,13 @@ export default {
     },
     onSelectCurrencyOut(selected){
       this.$store.commit('setSelectedOutCurrency', selected)
+    },
+    onInputIn(num){
+      const numReplacedComma = num.replace(',', '.')
+      const withoutSymbol = numReplacedComma.replace(/[^0-9.]/g, "")
+      const checkNumber = Number(withoutSymbol)
+      const res = isNaN(checkNumber) ? 0 : checkNumber
+      this.$store.commit('setAmountIn', res)
     },
   },
 }

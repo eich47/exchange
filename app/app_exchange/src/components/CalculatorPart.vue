@@ -15,10 +15,13 @@
     >
       <b-form-input
         :id="id"
-        v-model="amount"
+        :value="amount"
         type="text"
-        trim
+        :trim="true"
         class="border-0"
+        @input="$emit('input', $event)"
+        :formatter="formatter"
+
       ></b-form-input>
     </b-form-group>
 
@@ -66,7 +69,9 @@ export default {
   },
   computed: {},
   methods: {
-    onSubmit() {},
+    formatter(value){
+      return value.replace(/[^0-9.,]+/g, "")
+    },
   },
 }
 </script>
