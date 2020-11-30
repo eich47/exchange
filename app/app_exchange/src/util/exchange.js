@@ -10,8 +10,8 @@ export default class Exchange {
   }
   
   run(){
-    const rate = this.getExchangeRate()
-    rate.then(result => {
+    return this.getExchangeRate()
+      .then(result => {
       const amountOut = this.amount * result
       return amountOut
     })
@@ -24,7 +24,7 @@ export default class Exchange {
    * как бы делает запрос на api
    */
   getExchangeRate(){
-    new Promise(((resolve, reject) => {
+    return new Promise(((resolve, reject) => {
       setTimeout(()=>{
         const res = this.requestToApi(this.fromCurrency, this.toCurrency)
         if (res !== undefined){
