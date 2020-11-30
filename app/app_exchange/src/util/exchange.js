@@ -50,10 +50,5 @@ export default class Exchange {
     const res = rate.get(key)
     
     return res;
-    
-    
-  
-  
-  
   }
 }
