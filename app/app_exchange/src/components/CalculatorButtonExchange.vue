@@ -1,9 +1,9 @@
 <template>
   <div>
-    <button class="btn el-color py-3 px-4"
-            type="submit"
-            disabled="isDisabled"
-    >Обменять</button>
+    <b-button class="btn el-color py-3 px-4"
+              type="submit"
+              :disabled="isDisabled"
+    >Обменять</b-button>
   </div>
 </template>
 
