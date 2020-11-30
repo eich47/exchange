@@ -42,7 +42,7 @@
         "always-multiline"
       ],
       "vue/html-indent": [
-        "error",
+        "warn",
         2
       ],
       "comma-dangle": [
