@@ -38,14 +38,17 @@
     data(){
       return {
         isOpen: false,
-        options:[
-          {id: 1, text: 'RUB', value: 1, img: require('@/assets/rub.jpg')},
-          {id: 2, text: 'USD', value: 2, img: require('@/assets/usd.jpg')},
-          {id: 3, text: 'BTC', value: 3, img: require('@/assets/bnc.png')},
-        ],
-        selected: 1,
-
       }
+    },
+    props: {
+      options: {
+        type: Array,
+        required: true,
+      },
+      selected: {
+        type: Number,
+        required: true,
+      },
     },
     computed: {
       select(){

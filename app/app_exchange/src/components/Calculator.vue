@@ -4,37 +4,50 @@
       <b-col>
         <b-form>
           <div class="row align-items-end">
+            <!--            блок отдает-->
             <div class="col-auto border-bottom pr-0">
               <CalculatorPart
                 id="12345"
                 label="Сумма"
                 title="Вы отдаете"
-                :amount="count"
+                :amount="countIn"
                 :options="options"
                 labelCurrency=""
                 title-commission=""
+                :selected="selectedIn"
               />
             </div>
             <div class="col-auto border-bottom pb-3 pl-0">
-              <CalculatorSelect/>
+              <CalculatorSelect
+                :options="options"
+                :selected="selectedIn"
+              />
             </div>
             <div class="col-auto pb-4">
               <CalculatorSwap/>
             </div>
+
+
+            <!--            блок получает-->
             <div class="col-auto border-bottom pr-0">
               <CalculatorPart
                 id="8768678"
                 label="Сумма"
                 title="Вы получаете"
-                :amount="countIn"
+                :amount="countOut"
                 :options="options"
                 labelCurrency=""
                 :title-commission="'с учетом комиссии ПС (0.5%)'"
               />
             </div>
             <div class="col-auto border-bottom pb-3 pl-0">
-              <CalculatorSelect/>
+              <CalculatorSelect
+                :options="options"
+                :selected="selectedOut"
+              />
             </div>
+
+            <!--            блок кнопки-->
             <div class="col-auto">
               <CalculatorButtonExchange
                 :isDisabled="isDisabled"
@@ -58,20 +71,22 @@ export default {
   components: {CalculatorButtonExchange, CalculatorSwap, CalculatorSelect, CalculatorPart},
   computed: {
     options(){
-      return [
-        {value: 1, html: '<span class="icon-currency"><img src="/static/rub.jpg">RUB</span>' },
-        {value: 2, text: 'USD'},
-        {value: 3, text: 'EUR'},
-      ]
+      return this.$store.state.currency
     },
-    count(){
-      return 123.12
+    countOut(){
+      return this.$store.state.amountOut
     },
     countIn(){
-      return 444.33
+      return this.$store.state.amountIn
     },
     isDisabled(){
       return false
+    },
+    selectedIn(){
+      return this.$store.state.selectedInCurrency
+    },
+    selectedOut(){
+      return this.$store.state.selectedOutCurrency
     },
   },
 }
