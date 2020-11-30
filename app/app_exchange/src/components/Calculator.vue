@@ -2,7 +2,7 @@
   <b-container fluid="true">
     <b-row>
       <b-col>
-        <span class="d-block"
+        <span class="d-block min-height"
               :class="{'text-success': infoMessage.success, 'text-danger': !infoMessage.success}"
         >{{infoMessage.text}}</span>
         <b-form @submit.prevent="onSubmit">
@@ -147,5 +147,8 @@ export default {
   .icon-currency{
     /*background: url("/rub.jpg") no-repeat;*/
     /*color: red;*/
+  }
+  .min-height{
+    min-height: 1.5rem;
   }
 </style>
