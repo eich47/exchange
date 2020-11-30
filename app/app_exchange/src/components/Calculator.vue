@@ -144,10 +144,6 @@ export default {
 </script>
 
 <style scoped >
-  .icon-currency{
-    /*background: url("/rub.jpg") no-repeat;*/
-    /*color: red;*/
-  }
   .min-height{
     min-height: 1.5rem;
   }
