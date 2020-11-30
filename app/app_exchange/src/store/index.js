@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Currency from '../util/currency'
+import Exchange from "../util/exchange";
 
 Vue.use(Vuex)
 
@@ -16,6 +17,8 @@ export default new Vuex.Store({
     ], //доступные валютные пары
     selectedInCurrency: Currency.RUB, //какую валюту хочет отдать пользователь
     selectedOutCurrency: Currency.BTC, //какую валюту хочет получить пользователь
+    isExchangeSuccess: null, //обмен произведен успешно
+    isExchangeFailure: null, //обмен не был произведен
     
   },
   mutations: {
@@ -34,8 +37,29 @@ export default new Vuex.Store({
     setSelectedOutCurrency(state, payload){
       state.selectedOutCurrency = payload
     },
+    setExchangeSuccess(state, payload){
+       state.isExchangeSuccess = payload
+    },
+    setExchangeFailure(state, payload){
+      state.isExchangeFailure = payload
+    },
   },
   actions: {
+    exchange(context){
+      context.commit('setIsProcessing', true)
+      const result = new Exchange(context.state).run()
+      result.then(amountOut => {
+        context.commit('setAmountOut', amountOut)
+        context.commit('setExchangeSuccess', true)
+      })
+        .catch(err =>{
+          console.log(err);
+          context.commit('setExchangeFailure', true)
+        })
+        .finally(() => {
+          context.commit('setIsProcessing', false)
+        })
+    },
   },
   modules: {
   },
