@@ -35,6 +35,11 @@
             <div class="col-auto border-bottom pb-3 pl-0">
               <CalculatorSelect/>
             </div>
+            <div class="col-auto">
+              <CalculatorButtonExchange
+                :isDisabled="isDisabled"
+              />
+            </div>
 
           </div>
         </b-form>
@@ -47,9 +52,10 @@
 import CalculatorPart from './CalculatorPart'
 import CalculatorSelect from "./CalculatorSelect";
 import CalculatorSwap from "./CalculatorSwap";
+import CalculatorButtonExchange from "./CalculatorButtonExchange";
 export default {
   name: 'Calculator',
-  components: {CalculatorSwap, CalculatorSelect, CalculatorPart},
+  components: {CalculatorButtonExchange, CalculatorSwap, CalculatorSelect, CalculatorPart},
   computed: {
     options(){
       return [
@@ -63,6 +69,9 @@ export default {
     },
     countIn(){
       return 444.33
+    },
+    isDisabled(){
+      return false
     },
   },
 }
