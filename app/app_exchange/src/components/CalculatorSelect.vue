@@ -67,8 +67,7 @@
         console.log(event);
         const element = event.target.closest('li')
         const id = element.dataset.id
-        this.selected = Number(id)
-
+        this.$emit('onSelectCurrency', Number(id))
       },
     },
   }

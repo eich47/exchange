@@ -28,6 +28,12 @@ export default new Vuex.Store({
     setIsProcessing(state){
       this.isProcessing = state
     },
+    setSelectedInCurrency(state, payload){
+      state.selectedInCurrency = payload
+    },
+    setSelectedOutCurrency(state, payload){
+      state.selectedOutCurrency = payload
+    },
   },
   actions: {
   },

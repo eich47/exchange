@@ -21,6 +21,7 @@
               <CalculatorSelect
                 :options="options"
                 :selected="selectedIn"
+                @onSelectCurrency="onSelectCurrencyIn"
               />
             </div>
             <div class="col-auto pb-4">
@@ -44,6 +45,7 @@
               <CalculatorSelect
                 :options="options"
                 :selected="selectedOut"
+                @onSelectCurrency="onSelectCurrencyOut"
               />
             </div>
 
@@ -87,6 +89,14 @@ export default {
     },
     selectedOut(){
       return this.$store.state.selectedOutCurrency
+    },
+  },
+  methods:{
+    onSelectCurrencyIn(selected){
+      this.$store.commit('setSelectedInCurrency', selected)
+    },
+    onSelectCurrencyOut(selected){
+      this.$store.commit('setSelectedOutCurrency', selected)
     },
   },
 }
