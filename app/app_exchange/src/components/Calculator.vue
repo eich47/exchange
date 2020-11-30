@@ -1,33 +1,45 @@
 <template>
-  <b-container fluid="true">
+  <b-container :fluid="true">
     <b-row>
       <b-col>
         <span class="d-block min-height"
               :class="{'text-success': infoMessage.success, 'text-danger': !infoMessage.success}"
         >{{infoMessage.text}}</span>
-        <b-form @submit.prevent="onSubmit">
+
+        <b-form @submit.prevent="onSubmit" class="container-fluid">
           <div class="row align-items-end">
             <!--            блок отдает-->
             <div class="col-auto border-bottom pr-0">
-              <CalculatorPart
-                id="12345"
-                label="Сумма"
-                title="Вы отдаете"
-                :amount="countIn"
-                :options="options"
-                labelCurrency=""
-                title-commission=""
-                :selected="selectedIn"
-                @input="onInputIn"
-              />
+
+              <div class="d-flex align-items-end mb-5 pl-3">
+                <h3 class="h5 font-weight-bold mb-0 mr-2">
+                  Вы отдаете
+                </h3>
+              </div>
+
+              <div class="row align-items-end">
+                <div class="col-auto">
+                  <CalculatorPart
+                    id="12345"
+                    label="Сумма"
+                    title="Вы отдаете"
+                    :amount="countIn"
+                    :options="options"
+                    labelCurrency=""
+                    title-commission=""
+                    :selected="selectedIn"
+                    @input="onInputIn"
+                  /></div>
+                <div class="col-auto pb-3">
+                  <CalculatorSelect
+                    :options="options"
+                    :selected="selectedIn"
+                    @onSelectCurrency="onSelectCurrencyIn"
+                  /></div>
+              </div>
+
             </div>
-            <div class="col-auto border-bottom pb-3 pl-0">
-              <CalculatorSelect
-                :options="options"
-                :selected="selectedIn"
-                @onSelectCurrency="onSelectCurrencyIn"
-              />
-            </div>
+
             <div class="col-auto pb-4">
               <CalculatorSwap/>
             </div>
@@ -35,24 +47,33 @@
 
             <!--            блок получает-->
             <div class="col-auto border-bottom pr-0">
-              <CalculatorPart
-                id="8768678"
-                label="Сумма"
-                title="Вы получаете"
-                :amount="countOut"
-                :options="options"
-                labelCurrency=""
-                :title-commission="'с учетом комиссии ПС (0.5%)'"
-                :disabled="true"
-              />
+
+              <div class="d-flex align-items-end mb-5">
+                <h3 class="h5 font-weight-bold mb-0 mr-2">
+                  Вы получаете
+                </h3>
+                <small class="text-muted ">с учетом комиссии ПС (0.5%)</small>
+              </div>
+
+              <div class="row align-items-end">
+                <div class="col-auto pl-0">
+                  <CalculatorPart
+                    id="8768678"
+                    label="Сумма"
+                    title="Вы получаете"
+                    :amount="countOut"
+                    :options="options"
+                    labelCurrency=""
+                    :disabled="true"
+                  /></div>
+                <div class="col-auto pb-3"><CalculatorSelect
+                  :options="options"
+                  :selected="selectedOut"
+                  @onSelectCurrency="onSelectCurrencyOut"
+                /></div>
+              </div>
             </div>
-            <div class="col-auto border-bottom pb-3 pl-0">
-              <CalculatorSelect
-                :options="options"
-                :selected="selectedOut"
-                @onSelectCurrency="onSelectCurrencyOut"
-              />
-            </div>
+            
 
             <!--            блок кнопки-->
             <div class="col-auto">

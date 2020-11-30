@@ -1,11 +1,6 @@
 <template>
   <div class="amount-part">
-    <div class="d-flex align-items-end mb-5 pl-3">
-      <h3 class="h5 font-weight-bold mb-0 mr-2">
-        {{ title }}
-      </h3>
-      <small class="text-muted ">{{ titleCommission }}</small>
-    </div>
+
 
     <b-form-group
       :label="label"
@@ -34,14 +29,6 @@
 export default {
   name: 'CalculatorPart',
   props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    titleCommission: {
-      type: String,
-      required: false,
-    },
     amount: {
       type: Number,
       required: true,
@@ -97,5 +84,8 @@ export default {
     top: 0;
     height: 100%;
     border-left: 1px solid #dee2e6;
+  }
+  .form-group{
+    margin-bottom: 0;
   }
 </style>
