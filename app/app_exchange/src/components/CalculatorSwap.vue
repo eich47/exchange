@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="image-swap">
+    <div class="image-swap"
+         @click="onClick"
+    >
       <img :src="require('@/assets/arrows.jpg')" alt="поменять местами">
     </div>
   </div>
@@ -9,6 +11,11 @@
 <script>
   export default {
     name: "CalculatorSwap",
+    methods: {
+      onClick() {
+        this.$store.dispatch('swapCurrency')
+      },
+    },
   }
 </script>
 

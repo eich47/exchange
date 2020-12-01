@@ -82,6 +82,14 @@ export default new Vuex.Store({
           },2000)
         })
     },
+    swapCurrency({state, commit}) {
+      // c = a;
+      // a = b;
+      // b = c;
+      const tmp = state.selectedInCurrency
+      commit('setSelectedInCurrency', state.selectedOutCurrency)
+      commit('setSelectedOutCurrency', tmp)
+    },
   },
   modules: {
   },
