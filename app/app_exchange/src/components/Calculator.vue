@@ -9,7 +9,7 @@
         <b-form @submit.prevent="onSubmit" class="container-fluid">
           <div class="row align-items-end">
             <!--            блок отдает-->
-            <div class="col-3 border-bottom pr-0">
+            <div class="col-auto border-bottom pr-0 pl-0">
 
               <div class="d-flex align-items-end mb-5 pl-3">
                 <h3 class="h5 font-weight-bold mb-0 mr-2">
@@ -30,7 +30,7 @@
                     :selected="selectedIn"
                     @input="onInputIn"
                   /></div>
-                <div class="col-5 pb-3">
+                <div class="col-auto pb-3">
                   <CalculatorSelect
                     :options="options"
                     :selected="selectedIn"
@@ -46,9 +46,9 @@
 
 
             <!--            блок получает-->
-            <div class="col-3 border-bottom pr-0">
+            <div class="col-auto border-bottom pr-0 pl-0">
 
-              <div class="d-flex align-items-end mb-5">
+              <div class="d-flex align-items-end mb-5 pl-3">
                 <h3 class="h5 font-weight-bold mb-0 mr-2">
                   Вы получаете
                 </h3>
