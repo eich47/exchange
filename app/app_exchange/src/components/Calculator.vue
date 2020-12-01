@@ -6,19 +6,19 @@
               :class="{'text-success': infoMessage.success, 'text-danger': !infoMessage.success}"
         >{{infoMessage.text}}</span>
 
-        <b-form @submit.prevent="onSubmit" class="container-fluid">
+        <b-form @submit.prevent="onSubmit">
           <div class="row align-items-end">
             <!--            блок отдает-->
-            <div class="col-auto border-bottom pr-0 pl-0">
+            <div class="col-sm-12 col-md-5 col-lg-4 border-bottom pr-0 pl-0">
 
               <div class="d-flex align-items-end mb-5 pl-3">
-                <h3 class="h5 font-weight-bold mb-0 mr-2">
+                <h3 class="h6 font-weight-bold mb-0 mr-2">
                   Вы отдаете
                 </h3>
               </div>
 
               <div class="row align-items-end no-gutters">
-                <div class="col-7">
+                <div class="col-6">
                   <CalculatorPart
                     id="12345"
                     label="Сумма"
@@ -30,7 +30,7 @@
                     :selected="selectedIn"
                     @input="onInputIn"
                   /></div>
-                <div class="col-auto pb-3">
+                <div class="col-6 pb-3">
                   <CalculatorSelect
                     :options="options"
                     :selected="selectedIn"
@@ -39,24 +39,24 @@
               </div>
 
             </div>
-
-            <div class="col-auto pb-4">
+            <!--блок swap-->
+            <div class="col-sm-12 my-sm-3 my-md-0 col-md-2  pb-4 px-5 px-md-4" >
               <CalculatorSwap/>
             </div>
 
 
             <!--            блок получает-->
-            <div class="col-auto border-bottom pr-0 pl-0">
+            <div class="col-sm-12 col-md-5 col-lg-4 border-bottom pr-0 pl-0">
 
               <div class="d-flex align-items-end mb-5 pl-3">
-                <h3 class="h5 font-weight-bold mb-0 mr-2">
+                <h3 class="h6  font-weight-bold mb-0 mr-2">
                   Вы получаете
                 </h3>
                 <small class="text-muted ">с учетом комиссии ПС (0.5%)</small>
               </div>
 
               <div class="row align-items-end no-gutters">
-                <div class="col-7 pl-0">
+                <div class="col-6 pl-0">
                   <CalculatorPart
                     id="8768678"
                     label="Сумма"
@@ -66,7 +66,7 @@
                     labelCurrency=""
                     :disabled="true"
                   /></div>
-                <div class="col-5 pb-3"><CalculatorSelect
+                <div class="col-6 pb-3"><CalculatorSelect
                   :options="options"
                   :selected="selectedOut"
                   @onSelectCurrency="onSelectCurrencyOut"
@@ -76,7 +76,7 @@
             
 
             <!--            блок кнопки-->
-            <div class="col-auto">
+            <div class="col-sm-auto col-lg-2 mx-auto mx-lg-0 ml-lg-auto mt-3 mt-lg-0">
               <CalculatorButtonExchange
                 :isDisabled="isDisabled"
               />

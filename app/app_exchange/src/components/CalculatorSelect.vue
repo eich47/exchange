@@ -96,7 +96,7 @@
         border: medium solid transparent;
         content: "";
         top: 39%;
-        left: 50%;
+        left: 43%;
         position: absolute;
         height: 0;
         width: 0;

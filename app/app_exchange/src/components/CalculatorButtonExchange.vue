@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button class="btn el-color py-3 px-4"
+    <b-button class="btn el-color py-3 ml-lg-auto"
               type="submit"
               :disabled="isDisabled"
     >Обменять</b-button>

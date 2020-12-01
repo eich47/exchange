@@ -80,7 +80,7 @@ export default {
   .amount-group-input > div::after{
     content: "";
     position: absolute;
-    right: 0;
+    right: 1px;
     top: 0;
     height: 100%;
     border-left: 1px solid #dee2e6;

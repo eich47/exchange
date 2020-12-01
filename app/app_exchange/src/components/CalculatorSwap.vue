@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="image-swap"
+    <div class="image-swap text-center"
          @click="onClick"
     >
       <img :src="require('@/assets/arrows.jpg')" alt="поменять местами">
