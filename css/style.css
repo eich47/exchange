@@ -87,3 +87,12 @@ body {
   width: 72px;
   height: 16px;
 }
+
+/*нижнее меню*/
+/*медиа запросы*/
+@media (max-width: 991.98px) {
+  .nav-bottom .navbar-brand {
+    width: 100%;
+    text-align: center;
+  }
+}
