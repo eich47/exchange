@@ -11,8 +11,8 @@ export default new Vuex.Store({
     amountOut: 0, //сколько получаем
     isProcessing: false, //идет процесс обмена
     currency: [
-      {id: 1, text: 'RUB', value: Currency.RUB, img: require('@/assets/rub.jpg')},
-      {id: 2, text: 'USD', value: Currency.USD, img: require('@/assets/usd.jpg')},
+      {id: 1, text: 'RUB', value: Currency.RUB, img: require('@/assets/rub.png')},
+      {id: 2, text: 'USD', value: Currency.USD, img: require('@/assets/usd.png')},
       {id: 3, text: 'BTC', value: Currency.BTC, img: require('@/assets/bnc.png')},
     ], //доступные валютные пары
     selectedInCurrency: Currency.RUB, //какую валюту хочет отдать пользователь
