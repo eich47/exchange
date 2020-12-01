@@ -119,7 +119,7 @@ export default {
     infoMessage(){
       if(this.$store.state.isProcessing){
         return {
-         text: `обработка обмена...`,
+         text: `обработка обмена...(курс обмена вымышленный)`,
          success: true,
         }
       }
