@@ -9,7 +9,7 @@
         <b-form @submit.prevent="onSubmit" class="container-fluid">
           <div class="row align-items-end">
             <!--            блок отдает-->
-            <div class="col-auto border-bottom pr-0">
+            <div class="col-3 border-bottom pr-0">
 
               <div class="d-flex align-items-end mb-5 pl-3">
                 <h3 class="h5 font-weight-bold mb-0 mr-2">
@@ -17,8 +17,8 @@
                 </h3>
               </div>
 
-              <div class="row align-items-end">
-                <div class="col-auto">
+              <div class="row align-items-end no-gutters">
+                <div class="col-7">
                   <CalculatorPart
                     id="12345"
                     label="Сумма"
@@ -30,7 +30,7 @@
                     :selected="selectedIn"
                     @input="onInputIn"
                   /></div>
-                <div class="col-auto pb-3">
+                <div class="col-5 pb-3">
                   <CalculatorSelect
                     :options="options"
                     :selected="selectedIn"
@@ -46,7 +46,7 @@
 
 
             <!--            блок получает-->
-            <div class="col-auto border-bottom pr-0">
+            <div class="col-3 border-bottom pr-0">
 
               <div class="d-flex align-items-end mb-5">
                 <h3 class="h5 font-weight-bold mb-0 mr-2">
@@ -55,8 +55,8 @@
                 <small class="text-muted ">с учетом комиссии ПС (0.5%)</small>
               </div>
 
-              <div class="row align-items-end">
-                <div class="col-auto pl-0">
+              <div class="row align-items-end no-gutters">
+                <div class="col-7 pl-0">
                   <CalculatorPart
                     id="8768678"
                     label="Сумма"
@@ -66,7 +66,7 @@
                     labelCurrency=""
                     :disabled="true"
                   /></div>
-                <div class="col-auto pb-3"><CalculatorSelect
+                <div class="col-5 pb-3"><CalculatorSelect
                   :options="options"
                   :selected="selectedOut"
                   @onSelectCurrency="onSelectCurrencyOut"
