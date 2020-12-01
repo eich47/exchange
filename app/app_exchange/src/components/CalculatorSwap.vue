@@ -20,5 +20,7 @@
 </script>
 
 <style scoped>
-
+  .image-swap{
+    cursor: pointer;
+  }
 </style>
