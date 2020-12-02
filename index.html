@@ -6,12 +6,23 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    <link href="/css/app.b1e62c39.css" rel="preload" as="style" />
+    <link href="/css/chunk-vendors.2d065fb2.css" rel="preload" as="style" />
+    <link href="/js/app.46482324.js" rel="preload" as="script" />
+    <link href="/js/chunk-vendors.8c75993b.js" rel="preload" as="script" />
+    <link href="/css/chunk-vendors.2d065fb2.css" rel="stylesheet" />
+    <link href="/css/app.b1e62c39.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Обменник</title>
   </head>
   <body>
+    <noscript
+      ><strong
+        >We're sorry but app_exchange doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      ></noscript
+    >
     <div class="container-fluid">
       <nav
         class="navbar navbar-expand-lg navbar-light nav-padding-outside-left nav-padding-outside-right"
@@ -76,24 +87,31 @@
               <a class="nav-link" href="#">Вход</a>
             </li>
             <li class="nav-item">
-              <button class="btn bg-registation" href="#">Регистрация</button>
+              <a class="btn bg-registation" href="#">Регистрация</a>
             </li>
           </div>
         </div>
       </nav>
     </div>
-    <div class="container-fluid mb-5">
-      <section class="calculator row justify-content-center p-top">
-        <div class="col-lg-6">
-          <h1 class="ts-header text-center text-white font-weight-bold mb-5">
-            Мультивалютный обменный сервис 24/7
-          </h1>
-          <p class="text-center text-white h5">
-            Быстрый обмен без скрытых комиссий
-          </p>
+    <section class="calculator mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <h1 class="ts-header text-center text-white font-weight-bold mb-5">
+              Мультивалютный обменный сервис 24/7
+            </h1>
+            <p class="text-center text-white h5">
+              Быстрый обмен без скрытых комиссий
+            </p>
+          </div>
+          <div class="col-lg-10 mx-auto app-exchange pb-3">
+            <h2 class="sr-only">Калькулятор</h2>
+            <div id="app"></div>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
     <!--          bonus-->
     <div class="container mb-5">
       <section class="bonus">
@@ -428,6 +446,8 @@
       </nav>
     </div>
 
+    <script src="/js/chunk-vendors.8c75993b.js"></script>
+    <script src="/js/app.46482324.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
