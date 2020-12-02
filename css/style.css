@@ -44,27 +44,19 @@ body {
 }
 
 /*медиа запросы*/
-@media (max-width: 991.98px) {
-  .calculator {
-    background: url('/images/calculator/calculator_form.png') 50% 96% no-repeat,
-      url('/images/calculator/calculator_fon.png') center no-repeat;
-    background-size: auto, cover;
-  }
-}
-@media (max-width: 575.98px) {
-  .calculator .ts-header {
-    font-size: 2rem;
-  }
-  .calculator{
-    padding-top: 40px;
-  }
-}
 @media (max-width: 1199.98px) {
   .calculator .ts-header {
     font-size: 1.9rem;
   }
   .app-exchange{
     margin-top: 147px;
+  }
+}
+@media (max-width: 991.98px) {
+  .calculator {
+    background: url('/images/calculator/calculator_form.png') 50% 96% no-repeat,
+      url('/images/calculator/calculator_fon.png') center no-repeat;
+    background-size: auto, cover;
   }
 }
 @media (max-width: 767.98px) {
@@ -76,6 +68,16 @@ body {
     right: 0;
   }
 }
+@media (max-width: 575.98px) {
+  .calculator .ts-header {
+    font-size: 2rem;
+  }
+  .calculator{
+    padding-top: 40px;
+  }
+}
+
+
 
 /*секция бонус*/
 .bonus .image {
