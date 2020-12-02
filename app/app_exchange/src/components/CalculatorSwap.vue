@@ -3,7 +3,7 @@
     <div class="image-swap text-center"
          @click="onClick"
     >
-      <img :src="require('@/assets/arrows.jpg')" alt="поменять местами">
+      <img :src="require('@/assets/arrows.png')" alt="поменять местами">
     </div>
   </div>
 </template>
