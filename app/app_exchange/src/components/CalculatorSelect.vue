@@ -84,6 +84,7 @@
         display: block;
         position: absolute;
         width: 140px;
+        z-index: 1000;
     }
 
     .img-size{
